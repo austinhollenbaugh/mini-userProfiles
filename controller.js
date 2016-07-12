@@ -3,11 +3,13 @@ angular.module('userProfiles').controller('MainController', function($scope, mai
     $scope.getUsers = function() {
     	$scope.users = mainService.getUsers();
     }
-    
+
     $scope.getUsers();
 
     $scope.toggleFavorite = function(index) {
     	mainService.toggleFavorite(index);
+    	$scope.getUsers();
+   		console.log($scope.users);
     }
    
 })
